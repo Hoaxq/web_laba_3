@@ -1,0 +1,44 @@
+extends template
+
+block title
+  title Сайт про графики ЛР-03
+
+block head 
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async)
+
+block footer 
+  +footer-short-page 
+  script(src="https://d3js.org/d3.v5.min.js")
+  script(src='js/js-LR-03.js')
+  script(src='js/js-LR-03_2.js')
+
+block content
+  .head_01 
+    .my-text-02 
+      p График круга
+  div.r-block 
+    div.title-001
+      p Количество фигур: 
+        input(type="text", name="", value="40")
+        button#butt-02 Построить график
+    div#graf-container
+      div.curr-graff
+      p#p-1-1 Введено неверное колличество фигур. Введите значения в диапазоне от 10 до 300
+  .my-text-02 
+    p График функции
+  div.r-block-2
+    div.title-001
+      p#inl Функция:&nbsp;&nbsp;
+        div#inl 
+          p#inl \[ f(x) = \frac{{4 * x}}{{x^2 - 4}} \]
+    div#graf-container_02
+      div.curr-graff_02
+      p#p-1-2 Введён неверный интервал. Первое значение должно быть меньше второго, и находиться в промежутке от -100 до 20
+    .center-001
+      p#inl Интервал: от
+        input#pg-0-inp-1(type="text", name="", value="-3")
+        p#inl &nbsp;до 
+        input#pg-0-inp-2(type="text", name="", value="3")
+        button#butt-003 Построить график
+  div.f50px-spase
+  div.f50px-spase
